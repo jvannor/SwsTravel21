@@ -1,11 +1,15 @@
-﻿namespace ChannelAdapter.Services
+﻿using ChannelAdapter.Utilities;
+using Microsoft.Extensions.Options;
+
+namespace ChannelAdapter.Services
 {
     public class Worker : BackgroundService
     {
         // Methods
-        public Worker(ILogger<Worker> logger)
+        public Worker(ILogger<Worker> logger, IOptions<WorkerOptions> options)
         {
             _logger = logger;
+            _options = options.Value;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -19,5 +23,6 @@
 
         // Fields
         private readonly ILogger<Worker> _logger;
+        private readonly WorkerOptions _options;
     }
 }

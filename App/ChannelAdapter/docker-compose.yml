@@ -6,3 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+    - ChannelAdapter__Interval
+    - ChannelAdapter__Source
+    - ChannelAdapter__DestinationComponent
+    - ChannelAdapter__DestinationTopic
