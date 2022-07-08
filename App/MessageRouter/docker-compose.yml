@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  messagerouter:
+    image: ${DOCKER_REGISTRY-}messagerouter
+    build:
+      context: .
+      dockerfile: Dockerfile

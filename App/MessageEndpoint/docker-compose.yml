@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  messageendpoint:
+    image: ${DOCKER_REGISTRY-}messageendpoint
+    build:
+      context: .
+      dockerfile: Dockerfile
